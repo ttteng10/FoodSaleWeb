@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/header_nav.css"
+          th:href="@{/css/header_nav.css}">
+    <link rel="stylesheet" href="/css/footer.css"
+          th:href="@{/css/footer.css}">
+    <link rel="stylesheet" href="/css/shoppingbasket.css"
+    th:href="@{/css/shoppingbasket.css}">
+    <link rel="stylesheet" href="/css/goods.css"
+    th:href="@{/css/goods.css}">
+</head>
+<body>
+
+<div th:replace="~{page/header_nav :: header_nav}"></div>
+<div th:replace="~{page/header_nav :: header_sticky}"></div>
+
+    <div class="shopbasket">
+        <h2 class="shopbasket_title" th:text="${order}">장바구니</h2>
+
+        <div class="shopbasket_main">
+            <div class="shopbasket_list">
+                <ul class="shopbasket_list_ul">
+                    <li th:each="basketItem : ${itemCount}">
+                        <div class="shopbasket_list_goods">
+                            <a href=""><img src="/image/codang_corner.jpg" alt=""
+                            th:src="@{/image/{imgSrc}(imgSrc=${basketItem.key.imgSrc})}"></a>
+                            <div class="basket_goods_name" th:text="${basketItem.key.itemName}">초당 옥수수 5입</div>
+                            <div class="count_btn_sub">
+                                <button class="downbtn" type="button" onclick="count('minus')"
+                                th:onclick="|location.href='@{/shopBasket/down/{itemNum}(itemNum=${basketItem.key.itemNum})}'|"></button>
+                                <div class="countnum" id="resultnum"
+                                     th:text="${basketItem.value}">1</div>
+                                <button class="upbtn" type="button" onclick="count('plus')"
+                                        th:onclick="|location.href='@{/shopBasket/up/{itemNum}(itemNum=${basketItem.key.itemNum})}'|"></button>
+                            </div>
+                            <div class="basket_price_div">
+                                <span class="basket_goods_price" id="price_hidden"
+                                      th:text="${basketItem.key.itemSale}" hidden>6,435</span>
+                                <span class="basket_goods_price" id="price_change"
+                                th:text="${prices.get(basketItem.key.itemNum)}">6,435</span>
+                                <span class="basket_goods_price">원</span>
+                                <!--장바구니 삭제버튼 -->
+                                <span class="basket_price_btn_span" style="width:30px; height:30px;">
+                                    <form action="" th:action="@{/shopBasket/delete}" method="post"
+                                    style="width:30px; height:30px;">
+                                        <input type="hidden" name="itemNum" th:value="${basketItem.key.itemNum}">
+                                        <input type="hidden" name="itemCode" th:value="${basketItem.key.itemCode}">
+                                        <input type="hidden" name="itemName" th:value="${basketItem.key.itemName}">
+                                        <input type="hidden" name="itemSalePercent" th:value="${basketItem.key.itemSalePercent}">
+                                        <input type="hidden" name="itemSale" th:value="${basketItem.key.itemSale}">
+                                        <input type="hidden" name="itemPrice" th:value="${basketItem.key.itemPrice}">
+                                        <input type="hidden" name="saleUnit" th:value="${basketItem.key.saleUnit}">
+                                        <input type="hidden" name="weight" th:value="${basketItem.key.weight}">
+                                        <input type="hidden" name="imgSrc" th:value="${basketItem.key.imgSrc}">
+                                        <button type="submit" class="basket_price_btn"></button>
+                                    </form>
+                                </span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="shopbasket_address">
+                <div class="shopbasket_address_1">
+                    <h3 class="shopbasket_address_1_1">배송지</h3>
+                    <div class="shopbasket_address_1_2">
+                        <p class="shopbasket_address_1_2_1" th:text="${memberAddress}">
+                            <em>배송지를 등록</em>하고<br> 
+                            <span class="css-1bmnxg7 e1321nl40">구매 가능한 상품을 확인하세요!</span>
+                        </p>
+                        <button class="shopbasket_address_1_2_2" type="button" height="36" radius="3">
+                            <span class="shopbasket_address_2_2_1" th:text="${buttonAddress}">
+                                <img src="/image/ico_search.svg" alt="" class="shopbasket_address_2_2_2">주소 검색
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <div class="shopbasket_price">
+                  <div class="shopbasket_price_1">
+                    <span class="shopbasket_price_1_1">상품금액</span>
+                    <span class="shopbasket_price_1_2">
+                        <span id="shopbasket_total_price"
+                        th:text="${totalPrice}"></span>
+                        <span class="shopbasket_price_1_3">원</span>
+                    </span>
+                  </div>
+                  <div class="shopbasket_delivery_price">
+                    <span class="shopbasket_delivery_price_1">배송비</span>
+                    <span class="shopbasket_delivery_price_2">
+                      +<span id="delivery_price">3,000</span><span class="shopbasket_delivery_price_2_1">원</span>
+                    </span>
+                  </div>
+                  <div class="shopbasket_final_price">
+                    <span class="shopbasket_final_price_1">결제예정금액</span>
+                    <span class="shopbasket_final_price_2">
+                      <strong class="shopbasket_final_price_2_1" id="final_price"
+                      th:text="${finalPrice}">3,000</strong>
+                      <span class="shopbasket_final_price_2_2">원</span>
+                    </span>
+                  </div>
+                </div>
+                <div class="shopbasket_button"
+                     th:onclick="|location.href='@{/shopBasket/order}'|">
+                  <button class="shopbasket_button_1" type="button" disabled="" height="56" radius="3"
+                          th:style="${itemCount!=null ? 'background-color: purple;':''}">
+                    <span class="shopbasket_button_1_1" th:text="${buttonWord}">배송지를 입력해주세요</span>
+                  </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div th:replace="~{page/footer :: footer}"></div>
+    <script src="/js/basket.js"></script>
+</body>
+</html>

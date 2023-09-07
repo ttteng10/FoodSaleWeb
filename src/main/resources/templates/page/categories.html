@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/header_nav.css"
+          th:href="@{/css/header_nav.css}">
+    <link rel="stylesheet" href="/css/footer.css"
+          th:href="@{/css/footer.css}">
+    <link rel="stylesheet" href="/css/categories.css"
+          th:href="@{/css/categories.css}">
+    <link rel="stylesheet" href="/css/main_recommend.css"
+          th:href="@{/css/main_recommend.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <style>
+      body{font-family: 'Noto Sans KR', sans-serif;}
+    </style>
+</head>
+<body>
+<div th:replace="~{page/header_nav :: header_nav}"></div>
+<div th:replace="~{page/header_nav :: header_sticky}"></div>
+
+    <div class="categori_container">
+        <h3 class="categori_title" th:text="${title}">
+            채소
+        </h3>
+    </div>
+
+    <div class="categori_goods">
+        <div class="categori_images">
+            <div class="images_row" th:each="item : ${map}">
+                <div class="main_recommend_goods"
+                     th:each="itemValue : ${item.value}"
+                     th:onclick="|location.href='@{/page/goods/{itemNum}(itemNum=${itemValue.itemNum})}'|">
+                    <img src="/image/codang_corner.jpg"
+                         th:src="@{/image/{imgSrc}(imgSrc=${itemValue.imgSrc})}" alt="">
+                    <div class="goods_name"
+                         th:text="${itemValue.itemName}">초당 옥수수(노랑이) 5입</div>
+                    <div class="goods_price">
+                        <span style="color: red;" th:text="${itemValue.itemSalePercent}">20%</span>
+                        <span th:text="${itemValue.itemSale}">10,900</span>
+                        <span>원</span>
+                    </div>
+                    <div><span style="color: gray;">후기 9,999+</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="categori_filter">
+            <div style="font-size: 15px; font-weight: 500;
+            color:#333333; border-bottom: 1px solid rgb(238, 238, 238);
+            padding-bottom: 20px;">필터</div>
+            <div style="font-size: 15px; font-weight: 500; color:#333333;
+            padding-bottom: 10px;">
+                가격
+            </div>
+            <div class="categori_filter_list">
+                <ul>
+                    <li th:onclick="|location.href='@{/categories/{itemCode}/9999(itemCode=${itemCode})}'|">
+                        <input type="checkbox" id="price1" th:checked="${checkId == 'price1'}">
+                        <label for="price1">0~9,999</label>
+                    </li>
+                    <li th:onclick="|location.href='@{/categories/{itemCode}/19999(itemCode=${itemCode})}'|">
+                        <input type="checkbox" id="price2" th:checked="${checkId == 'price2'}">
+                        <label for="price2">~19,999</label>
+                    </li>
+                    <li th:onclick="|location.href='@{/categories/{itemCode}/29999(itemCode=${itemCode})}'|">
+                        <input type="checkbox" id="price3" th:checked="${checkId == 'price3'}">
+                        <label for="price3">~29,999</label>
+                    </li>
+                    <li th:onclick="|location.href='@{/categories/{itemCode}/39999(itemCode=${itemCode})}'|">
+                        <input type="checkbox" id="price4" th:checked="${checkId == 'price4'}">
+                        <label for="price4">~39,999</label>
+                    </li>
+                    <li th:onclick="|location.href='@{/categories/{itemCode}/49999(itemCode=${itemCode})}'|">
+                        <input type="checkbox" id="price5" th:checked="${checkId == 'price5'}">
+                        <label for="price5">~49,999</label>
+                    </li>
+                    <li th:onclick="|location.href='@{/categories/{itemCode}/59999(itemCode=${itemCode})}'|">
+                        <input type="checkbox" id="price6" th:checked="${checkId == 'price6'}">
+                        <label for="price6">~59,999</label>
+                    </li>
+                    <li th:onclick="|location.href='@{/categories/{itemCode}/69999(itemCode=${itemCode})}'|">
+                        <input type="checkbox" id="price7" th:checked="${checkId == 'price7'}">
+                        <label for="price7">~69,999</label>
+                    </li>
+                    <li th:onclick="|location.href='@{/categories/{itemCode}/79999(itemCode=${itemCode})}'|">
+                        <input type="checkbox" id="price8" th:checked="${checkId == 'price8'}">
+                        <label for="price8">~79,999</label>
+                    </li>
+                    <li th:onclick="|location.href='@{/categories/{itemCode}/89999(itemCode=${itemCode})}'|">
+                        <input type="checkbox" id="price9" th:checked="${checkId == 'price9'}">
+                        <label for="price9">~89,999</label>
+                    </li>
+                    <li th:onclick="|location.href='@{/categories/{itemCode}/90000(itemCode=${itemCode})}'|">
+                        <input type="checkbox" id="price10" th:checked="${checkId == 'price10'}">
+                        <label for="price10">90,000~</label>
+                    </li>
+                    <li th:onclick="|location.href='@{/categories/{itemCode}/0(itemCode=${itemCode})}'|">
+                        <input type="checkbox" id="priceAll" th:checked="${checkId == 'priceAll'}">
+                        <label for="priceAll">전체보기</label>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div th:replace="~{page/footer :: footer}"></div>
+</body>
+</html>

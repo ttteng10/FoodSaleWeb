@@ -1,0 +1,221 @@
+html, body{
+  margin: 0px;
+  padding: 0px;
+}
+a {
+  text-decoration: none;
+}
+.menu {
+  background-color: white;
+  /* min-width: 1050px; */
+  width: 1050px;
+  /* margin: 10px 13%; */
+  margin: 10px auto;
+  align-items: center;
+  display: block;
+}
+.menu_1 {
+  font-size:  13px;
+  height: 30px;
+  width: 100%;
+  min-width: 1050px;
+}
+
+.menu_2{
+  display: flex;
+  height: 63px;
+  width: 100%;
+  min-width: 1050px;
+  /* align-items: center; */
+  justify-content: space-between;
+}
+.logo{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.kurlylogo{
+  width: 82px;
+  height: 42px;
+  margin-right: 20px;
+}
+
+.searchbox {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  /* position: absolute; */
+  left: 325px;
+  /* top: -55px; */
+  width: 400px;
+  height: 48px;
+  padding-left: 14px;
+  border: 1px solid rgb(95, 0, 128);
+  border-radius: 6px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgb(247, 247, 247) 0px 0px 0px 1px inset;
+}
+.search{
+  width: 300px;
+  background-color: inherit;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  letter-spacing: -0.33px;
+}
+
+#main_search{
+  position: relative;
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+  bottom: 3px;
+  background: url(/image/searchimage.svg) 0px 0px no-repeat;
+  border:none;
+  cursor: pointer;  
+}
+
+.menu_2_buttons{
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  /* position: absolute; */
+}
+
+.like{
+  width: 36px;
+  height: 36px;
+  background: url(/image/button_like.svg) 50% 50% no-repeat;
+  border:none;
+  cursor: pointer;
+  margin: 0 10px; 
+}
+
+.myorder{
+  width: 36px;
+  height: 36px;
+  background: url(/image/button_myorder.svg) 50% 50% no-repeat;
+  border:none;
+  cursor: pointer; 
+  margin: 0 10px; 
+}
+.stickymenu{
+  position: sticky;
+  top: 0px;
+  width: 100%;
+  background-color: white;
+}
+.menu_3{
+  /* position: relative; */
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  align-items: center;
+  width: 1050px;
+  height: 56px;
+  margin: 0px auto;
+  background-color: white;
+}
+.categori_1{
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  height: 100%;
+  cursor: pointer; 
+}
+
+.categori_1:hover .categori_down{
+  display: block;
+}
+
+.categori_image{
+  width: 16px;
+  height: 14px;
+  margin-right: 14px;
+  background: url(/image/categori_image.svg) 0px 0px / 16px 14px no-repeat;
+  cursor: pointer;
+}
+
+.categori_1 span{
+  position: relative;
+}
+
+.categori_down{
+  display: none;
+  position: absolute;
+  padding-top: 250px;
+  transform: translate(-40px,125px);
+  z-index=100;
+  opacity:1;
+}
+
+.categori_down li{
+  width: 200px;
+  padding-left: 20px;
+  padding-bottom: 10px;
+  list-style: none;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  background-color: white;
+  opacity:1;
+}
+
+.menu_3_list{
+  display: flex;
+  margin-left: 30px;
+}
+
+.list_li{
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  width: 150px;
+  height: 55px;
+  /* padding-top: 18px; */
+  line-height: 55px;
+  text-align: center;
+  
+}
+.list_li:hover{
+  text-decoration: underline;
+  color: purple;
+  font-size: 30px;
+}
+
+.list_span{
+  height: fit-content;
+  font-size: 16px;
+  font-weight: 500;
+  color: rgb(51, 51, 51);
+  cursor: pointer;
+}
+
+.delivery_btn{
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.delivery_btn a{
+  background-color: transparent;
+  text-decoration: none;
+  color: inherit;
+}
+
+.delivery_btn_1{
+  height: 32px;
+  padding: 6px 16px;
+  border-radius: 18px;
+  border: 1px solid rgb(238, 238, 238);
+  color: rgb(102, 102, 102);
+  font-size: 13px;
+  line-height: 32px;
+  /* letter-spacing: -0.32px; */
+}
+
+.delivery_btn_word{
+  font-weight: 500;
+  color: rgb(95, 0, 128);
+}

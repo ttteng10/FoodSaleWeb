@@ -1,0 +1,77 @@
+.main{
+    width: 1050px;
+    margin: 100px auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.main_recommend{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: block;
+}
+
+.main_recommend_label{
+    display: block;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 30px; 
+}
+.outer{
+    overflow-x: hidden;
+    width: 1050px;
+}
+.main_recommend_img{
+    display: flex;
+    width: 1050px;
+    height: 500px;
+    /* padding: 0px 50px; */
+    
+}
+.goods_list{
+    display: flex;
+    width: 1050px;
+    /* padding: 0px 50px; */
+    justify-content: space-between;
+}
+.main_recommend_goods {
+    width: 245px;
+    height: 350px;
+    margin: 10px;
+    cursor: pointer;
+}
+.main_recommend_goods>img{
+    width: 245px;
+    height: 320px;
+}
+
+.leftbtn{
+    position: absolute;
+    z-index: 100;
+    border: 0px;
+    outline: 0px;
+    width: 60px;
+    height: 60px;
+    background: url(/image/leftbtn.svg) 50% 50% no-repeat;
+    transition: background 0.5s ease 0s;
+    /* top: 160px;
+    right: 0px; */
+    /* transform: translate(50%, -50%) rotate(180deg); */
+    transform: translate(-20px, 200px) ;
+}
+.rightbtn{
+    position: absolute;
+    z-index: 100;
+    border: 0px;
+    outline: 0px;
+    width: 60px;
+    height: 60px;
+    background: url(/image/leftbtn.svg) 50% 50% no-repeat;
+    transition: background 0.5s ease 0s;
+    /* top: 160px;
+    right: 0px; */
+    transform: translate(1020px, -350px) rotate(180deg);
+    /* transform: translate(-20px, 140px) ;  */
+}
+

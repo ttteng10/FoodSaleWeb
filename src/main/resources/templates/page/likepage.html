@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/header_nav.css"
+          th:href="@{/css/header_nav.css}">
+    <link rel="stylesheet" href="/css/footer.css"
+          th:href="@{/css/footer.css}">
+    <link rel="stylesheet" href="/css/likepage.css"
+          th:href="@{/css/likepage.css}">
+</head>
+<body>
+<div th:replace="~{page/header_nav :: header_nav}"></div>
+<div th:replace="~{page/header_nav :: header_sticky}"></div>
+
+<div class="likepage">
+    <div class="like_menu">
+        <div class="like_menu_name">마이컬리</div>
+        <div>
+            <ul class="like_menu_list">
+                <li><a href="" class="like_menu_list_li">주문내역</a></li>
+                <li><a href="" class="like_menu_list_li">선물내역</a></li>
+                <li><a href="" class="like_menu_list_li">찜한상품</a></li>
+                <li><a href="" class="like_menu_list_li">배송지관리</a></li>
+                <li><a href="" class="like_menu_list_li">상품후기</a></li>
+                <li><a href="" class="like_menu_list_li">상품문의</a></li>
+                <li><a href="" class="like_menu_list_li">쿠폰</a></li>
+                <li><a href="" class="like_menu_list_li">개인 정보 수정</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="like_main">
+        <div class="like_main_title">찜한 상품(<span th:text="${CountItems}">0</span>)
+            <span class="like_main_title_sub">찜한 상품은 최대 200개까지 저장됩니다.</span>
+        </div>
+        <div class="like_goods">
+            <div class="like_goods_detail" th:each="item:${items}">
+                <div class="like_goods_div_img" style="background-image:url('/image/america_cherry_500g.jpg')"
+                th:style="|background-image:url('@{/image/{imgSrc}(imgSrc=${item.imgSrc})}')|">
+                    <a href="">
+                        <span class="like_goods_img"></span>
+                    </a>
+                </div>
+                <div class="like_goods_main">
+                    <div class="like_goods_name">
+                        <div class="like_goods_name_1">
+                            <a href="" th:text="${item.itemName}"
+                            th:href="|location.href='@{/page/goods/{itemNum}(itemNum=${item.itemNum})}'|">
+                                당도선별 수박 6kg 이상</a>
+                        </div>
+                        <div class="like_goods_price">
+                            <span class="like_goods_price_1"
+                            th:text="${item.itemSale}">20,900</span><span class="like_goods_price_1">원</span>
+                        </div>
+                    </div>
+                    <div class="like_goods_btn">
+                        <button class="like_goods_delete"
+                        th:onclick="|location.href='@{/shopBasket/likeDelete/{itemNum}(itemNum=${item.itemNum})}'|">
+                            <span class="like_goods_delete_word">삭제</span>
+                        </button>
+                        <form action="" th:action="@{/shopBasket/btn}" method="post">
+                            <input type="hidden" name="itemNum" th:value="${item.itemNum}">
+                            <input type="hidden" name="itemCode" th:value="${item.itemCode}">
+                            <input type="hidden" name="itemName" th:value="${item.itemName}">
+                            <input type="hidden" name="itemSalePercent" th:value="${item.itemSalePercent}">
+                            <input type="hidden" name="itemSale" th:value="${item.itemSale}">
+                            <input type="hidden" name="itemPrice" th:value="${item.itemPrice}">
+                            <input type="hidden" name="saleUnit" th:value="${item.saleUnit}">
+                            <input type="hidden" name="weight" th:value="${item.weight}">
+                            <input type="hidden" name="imgSrc" th:value="${item.imgSrc}">
+                            <input type="hidden" id="quantity" name="quantity">
+                            <button class="like_goods_basket" type="submit">
+                                <span class="like_goods_basket_word"><img src="/image/button_myorder.svg" alt="" class="like_goods_basket_img">담기</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:replace="~{page/footer :: footer}"></div>
+</body>
+</html>

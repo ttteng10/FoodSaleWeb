@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/css/header_nav.css"
+  th:href="@{/css/header_nav.css}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <style>
+      body{font-family: 'Noto Sans KR', sans-serif;}
+    </style>
+</head>
+<body>
+  <nav th:fragment="header_nav">
+    <div class="menu">
+      <div class="menu_1">
+        <div align="right">
+          <a href="/views/newaccount.html"
+             th:if="${session.loginMember == null}"
+             th:href="@{/newaccount}">회원가입</a>
+          <a th:if="${session.loginMember != null}"
+             th:text="${session.loginMember.getName()}">회원가입</a>|
+          <a href="/views/login.html"
+             th:if="${session.loginMember == null}"
+             th:href="@{/login}">로그인</a>
+          <a href="/views/login.html"
+             th:if="${session.loginMember != null}"
+             th:href="@{/logout}">로그아웃</a>|
+          <a href="">고객센터</a>
+        </div>
+      </div>
+      <div class="menu_2">
+        <div class = "logo">
+          <a href="/index.html" th:href="@{/}"><img src="/image/kurlyLogo.svg" alt="" class="kurlylogo"></a>
+          <a href="/index.html" th:href="@{/}">마켓컬리</a>
+        </div>
+        <div class="searchbox">
+          <input type="text" placeholder="검색어를 입력해주세요" 
+          class="search">
+          <button id="main_search" type="submit"></button>
+        </div>
+        <div class="menu_2_buttons">
+          <button class="like" aria-label="찜하기" type="button"
+                  th:onclick="|location.href='@{/shopBasket/like}'|"></button>
+          <button class="myorder" aria-label="장바구니"
+                  onclick="location.href='/views/shoppingbasket.html'"
+                  th:onclick="|location.href='@{/shopBasket/img}'|"></button>
+        </div>
+      </div>
+    </div>
+</nav>
+<div class="stickymenu" th:fragment="header_sticky">
+  <div class="menu_3">
+    <div class="categori">
+      <div class="categori_1">
+        <span class="categori_image"></span>
+        <span>카테고리</span>
+        <div class="categori_down">
+          <ul>
+            <li><a href="/views/categories/categories_vegetable.html"
+            th:href="@{/categories/vegetable}">채소</a></li>
+            <li><a href="" th:href="@{/categories/fruit}">과일 견과 쌀</a></li>
+            <li><a href="" th:href="@{/categories/seafood}">수산 해산 건어물</a></li>
+            <li><a href="" th:href="@{/categories/meat}">정육 계란</a></li>
+            <li><a href="" th:href="@{/categories/mainCook}">국 반찬 메인요리</a></li>
+            <li><a href="" th:href="@{/categories/salad}">샐러드 간편식</a></li>
+            <li><a href="" th:href="@{/categories/noodle}">면 양념 오일</a></li>
+            <li><a href="" th:href="@{/categories/drink}">생수 음료 우유 커피</a></li>
+            <li><a href="" th:href="@{/categories/snack}">간식 과자 떡</a></li>
+            <li><a href="" th:href="@{/categories/bakery}">베이커리 치즈델리</a></li>
+            <li><a href="" th:href="@{/categories/health}">건강식품</a></li>
+            <li><a href="" th:href="@{/categories/wine}">와인 위스키</a></li>
+            <li><a href="" th:href="@{/categories/traditional}">전통주</a></li>
+          </ul>
+        </div>
+      </div>
+      
+    </div>
+  
+    <ul class="menu_3_list">
+      <li class="list_li" th:onclick="|location.href='@{/categories/newGoods}'|">
+        <span class="list_span"><a href="/views/categories/categories_newgoods.html"
+                                   th:href="@{/categories/newGoods}"
+                                   class="list_span">신상품</a></span>
+      </li>
+      <li class="list_li" th:onclick="|location.href='@{/categories/bestGoods}'|">
+        <span class="list_span"><a href="/views/categories/categories_best.html"
+                                   th:href="@{/categories/bestGoods}"
+                                   class="list_span">베스트</a></span>
+      </li>
+      <li class="list_li" th:onclick="|location.href='@{/categories/saleGoods}'|">
+        <span class="list_span"><a href="/views/categories/categories_sale.html"
+                                   th:href="@{/categories/saleGoods}"
+                                   class="list_span">알뜰쇼핑</a></span>
+      </li>
+      <li class="list_li">
+        <span class="list_span"><a href="/views/event.html" class="list_span">특가/혜택</a></span>
+      </li>
+    </ul>
+
+    <div class="delivery_btn">
+      <a href="/views/delivery_inform.html">
+        <div class="delivery_btn_1">
+          <span class="delivery_btn_word">샛별 택배</span>
+           배송안내
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+</body>
+</html>

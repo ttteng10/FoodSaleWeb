@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.repository.mybatis.BasketMapper">
+
+    <insert id="saveLike">
+        insert into likeBox(memberId,itemNum) values(#{id},#{itemNum})
+    </insert>
+
+    <select id="findLikeAll" resultType="String">
+        select itemNum from likeBox where memberId = #{id}
+    </select>
+
+    <delete id="deleteLike">
+        delete from likeBox where memberId = #{id} and itemNum = #{itemNum}
+    </delete>
+
+    <insert id="saveBasket">
+        insert into basket(memberId,itemNum,quantity) values(#{id},#{itemNum},#{quantity})
+    </insert>
+
+    <update id="updateBasket">
+        update basket set quantity = #{quantity} where itemNum = #{itemNum} and memberId = #{id}
+    </update>
+
+    <delete id="deleteBasket">
+        delete from basket where memberId = #{id} and itemNum = #{itemNum}
+    </delete>
+
+    <delete id="order">
+        delete from basket where memberId = #{id}
+    </delete>
+
+    <select id="findBasketAll" resultType="BasketDB">
+        select * from basket where memberId = #{id}
+    </select>
+</mapper>

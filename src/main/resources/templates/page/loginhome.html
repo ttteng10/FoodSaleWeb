@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/header_nav.css"
+    th:href="@{/css/header_nav.css}">
+    <link rel="stylesheet" href="/css/banner.css"
+    th:href="@{/css/banner.css}">
+    <link rel="stylesheet" href="/css/main_recommend.css"
+    th:href="@{/css/main_recommend.css}">
+    <link rel="stylesheet" href="/css/footer.css"
+    th:href="@{/css/footer.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <style>
+      body{font-family: 'Noto Sans KR', sans-serif;}
+    </style>
+</head>
+<body>
+    <div th:replace="~{page/header_nav :: header_nav}"></div>
+    <div th:replace="~{page/header_nav :: header_sticky}"></div>
+
+    <div class="banner">
+        <div class="banner_img">
+            <img src="/image/banner_img_1.jpg" alt="">
+        </div>
+        <div class="banner_img">
+            <img src="/image/banner_img_2.jpg" alt="">
+        </div>
+        <div class="banner_img">
+            <img src="/image/banner_img_3.png" alt="">
+        </div>
+        <div class="banner_img">
+            <img src="/image/banner_img_4.jpg" alt="">
+        </div>
+        <div class="banner_img">
+            <img src="/image/banner_img_5.jpg" alt="">
+        </div>
+    </div>
+    
+    <div class="main">
+      <div class="outer" id="outer_1">
+      <button class="leftbtn" id="leftbtn_1"></button>
+      <div class="main_recommend">
+        <div class="main_recommend_label">
+            이 상품 어때요?
+        </div>
+        <div class="main_recommend_img" id="main_recommend_img_1">
+          
+          <div class="goods_list" id="goods_list_1">
+            <div class="main_recommend_goods"
+                 th:onclick="|location.href='@{/page/goods/sondae}'|">
+              <img src="/image/goods1.jpg" alt="">
+              <div class="goods_name">순대떡볶이</div>
+              <div class="goods_price">
+                <span style="color: red;">35%</span> 6,435원
+              </div>
+              <div><del style="color: gray;">9,900원</del></div>
+            </div>
+            <div class="main_recommend_goods"
+                 th:onclick="|location.href='@{/page/goods/fried_squid}'|">
+              <img src="/image/goods2.jpeg" alt="">
+              <div class="goods_name">[튀김공방] 매콤 오징어튀김</div>
+              <div class="goods_price">
+                <span style="color: red;">10%</span>6,030원
+              </div>
+              <div><del style="color: gray;">6,700원</del></div>
+            </div>
+            <div class="main_recommend_goods"
+                 th:onclick="|location.href='@{/page/goods/musankim}'|">
+              <img src="/image/goods3.jpg" alt="">
+              <div class="goods_name">[만전김] 만지도 무산김(곱창김)2종(택1)</div>
+              <div class="goods_price">
+                <span style="color: red;">8%</span>12,800원
+              </div>
+              <div><del style="color: gray;">14,000원</del></div>
+            </div>
+            <div class="main_recommend_goods"
+                 th:onclick="|location.href='@{/page/goods/bnrQueen30}'|">
+              <img src="/image/goods4.jpg" alt="">
+              <div class="goods_name">[BNR17]비에날퀸(30일분)</div>
+              <div class="goods_price">
+                <span style="color: red;">34%</span>83,900원
+              </div>
+              <div><del style="color: gray;">128,000원</del></div>
+            </div>
+          </div>
+          
+          <div class="goods_list" id="goods_list_1">
+            <div class="main_recommend_goods"
+                 th:onclick="|location.href='@{/page/goods/goods5}'|">
+              <img src="/image/goods5.jpg" alt="">
+              <div class="goods_name">[라우쉬] 하트씨드 센시티브
+                  샴푸 (민감 두피 진정 샴푸)
+              </div>
+              <div class="goods_price">
+                <span style="color: red;">10%</span>26,000원
+              </div>
+              <div><del style="color: gray;">29,000원</del></div>
+            </div>
+            <div class="main_recommend_goods"
+                 th:onclick="|location.href='@{/page/goods/goods6}'|">
+              <img src="/image/goods6.jpg" alt="">
+              <div class="goods_name">[코시] 호주산 펫밀크 1L</div>
+              <div class="goods_price">
+                <span style="color: red;">10%</span>6,310원
+              </div>
+              <div><del style="color: gray;">6,900원</del></div>
+            </div>
+            <div class="main_recommend_goods"
+                 th:onclick="|location.href='@{/page/goods/goods7}'|">
+              <img src="/image/goods7.jpg" alt="">
+              <div class="goods_name">[아이포크] 한돈 갈비찜 밀키트</div>
+              <div class="goods_price">
+                <span style="color: red;">10%</span>13,491원
+              </div>
+              <div><del style="color: gray;">14,990원</del></div>
+            </div>
+            <div class="main_recommend_goods"
+                 th:onclick="|location.href='@{/page/goods/goods8}'|">
+              <img src="/image/goods8.jpg" alt="">
+              <div class="goods_name">[데쎄오]쇼트브레드 3종(택1)</div>
+              <div class="goods_price">
+                <span style="color: red;">10%</span>9,300원
+              </div>
+              <div><del style="color: gray;">10,800원</del></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="rightbtn" id="rightbtn_1"></button>
+      </div>
+
+      <div class="outer" id="outer_2">
+        <button class="leftbtn" id="leftbtn_2"></button>
+        <div class="main_recommend">
+          <div class="main_recommend_label">
+              놓치면 후회할 가격 >
+          </div>
+          <div class="main_recommend_img" id="main_recommend_img_2">
+            
+            <div class="goods_list" id="goods_list_2">
+              <div class="main_recommend_goods"
+                   th:onclick="|location.href='@{/page/goods/goods9}'|">
+                <img src="/image/muhang_two_chicken.jpg" alt="">
+                <div class="goods_name">[자연실록] 무항생제 두마리 통닭(550gX2입)</div>
+                <div class="goods_price">
+                    <span style="color: red;">20%</span> 6,435원
+                </div>
+                <div><del style="color: gray;">10,900원</del></div>
+              </div>
+              <div class="main_recommend_goods"
+                   th:onclick="|location.href='@{/page/goods/goods10}'|">
+                <img src="/image/hyunseok_shrimp_pasta.jpg" alt="">
+                <div class="goods_name">[최현석의 쵸이닷] 새우 봉골레 파스타</div>
+                <div class="goods_price">
+                    <span style="color: red;">15%</span> 7,565원
+                </div>
+                <div><del style="color: gray;">8,900원</del></div>
+              </div>
+              <div class="main_recommend_goods"
+                   th:onclick="|location.href='@{/page/goods/goods11}'|">
+                <img src="/image/mansan_5_jeonbok_260g.jpeg" alt="">
+                <div class="goods_name">[만선] 완도 전복 5마리 260g 내외</div>
+                <div class="goods_price">
+                    <span style="color: red;">26%</span> 10,900원
+                </div>
+                <div><del style="color: gray;">14,900원</del></div>
+              </div>
+              <div class="main_recommend_goods"
+                   th:onclick="|location.href='@{/page/goods/goods12}'|">
+                <img src="/image/pjogal_best_5.jpg" alt="">
+                <div class="goods_name">[피지오겔] 베스트 특가 5종 택1(크림,로션
+                    ,바디로션,썬크림,썬스틱)
+                </div>
+                <div class="goods_price">
+                    <span style="color: red;">52%</span> 15,990원~
+                </div>
+                <div><del style="color: gray;">34,000원</del></div>
+              </div>
+            </div>
+            
+            <div class="goods_list" id="goods_list_2">
+              <div class="main_recommend_goods"
+                   th:onclick="|location.href='@{/page/goods/goods13}'|">
+                <img src="/image/apgujeong_webfoot_octopus_300g.jpg" alt="">
+                <div class="goods_name">[압구정주꾸미] 주꾸미 볶음 300g</div>
+                <div class="goods_price">
+                    <span style="color: red;">23%</span> 6,800원
+                </div>
+                <div><del style="color: gray;">8,900원</del></div>
+              </div>
+              <div class="main_recommend_goods"
+                   th:onclick="|location.href='@{/page/goods/goods14}'|">
+                <img src="/image/america_cherry_500g.jpg" alt="">
+                <div class="goods_name">미국산 워싱턴 생체리 500g</div>
+                <div class="goods_price">
+                    <span style="color: red;">46%</span> 7,900원
+                </div>
+                <div><del style="color: gray;">14,800원</del></div>
+              </div>
+              <div class="main_recommend_goods"
+                   th:onclick="|location.href='@{/page/goods/goods15}'|">
+                <img src="/image/jeong_original_Udon.jpg" alt="">
+                <div class="goods_name">[정호영셰프의 우동카덴] 오리지널 우동</div>
+                <div class="goods_price">
+                    <span style="color: red;">15%</span> 4,930원
+                </div>
+                <div><del style="color: gray;">5,800원</del></div>
+              </div>
+              <div class="main_recommend_goods"
+                   th:onclick="|location.href='@{/page/goods/goods16}'|">
+                <img src="/image/toothnonote_toothpaste_5.jpg" alt="">
+                <div class="goods_name">[투스노트] 미백치약/가글/화이트닝겔/치실 5종
+                    (택1)
+                </div>
+                <div class="goods_price">
+                    <span style="color: red;">77%</span> 8,900원
+                </div>
+                <div><del style="color: gray;">40,000원</del></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="rightbtn" id="rightbtn_2"></button>
+      </div>
+    </div>
+
+    <div th:replace="~{page/footer :: footer}"></div>
+    <script src="/js/btnbanner.js"></script>
+    <script src="/js/banner.js"></script>
+</body>
+</html>
