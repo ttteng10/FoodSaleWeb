@@ -1,0 +1,225 @@
+//상품테이블만들기
+create table item (
+    itemNum varchar(50),
+    itemCode varchar(50),
+    itemName varchar(50),
+    itemSalePercent varchar(50),
+    itemSale varchar(50),
+    itemPrice varchar(50),
+    saleUnit varchar(50),
+    weight varchar(50),
+    imgSrc varchar(50),
+    primary key(itemNum)
+)
+//상품데이터추가
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('sondae','salad saleGoods','순대떡볶이','35%','6,435','9,900','1팩','660g','goods1.jpg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('fried_squid','salad saleGoods','[튀김공방] 매콤 오징어튀김','10%','6,030','6,700','1개','350g','goods2.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('musankim','seafood saleGoods','[만전김] 만지도 무산김(곱창김)2종(택1)','8%','12,800','14,000','1개','30매/100매','goods3.jpg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('bnrQueen30','health saleGoods','[BNR17]비에날퀸(30일분)','34%','83,900','128,000','1통','450mg*60캡','goods4.jpg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods5','health newGoods','[라우쉬] 하트씨드 센시티브 샴푸 (민감 두피 진정 샴푸)','10%','26,000','29,000','1개','500ml','goods5.jpg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods6','petgoods newGoods','[코시] 호주산 펫밀크 1L','10%','6,310','6,900','1팩','1L','goods6.jpg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods7','meat salad newGoods','[아이포크] 한돈 갈비찜 밀키트','10%','13,491','14,990','1팩','800g','goods7.jpg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods8','snack bestGoods','[데쎄오]쇼트브레드 3종(택1)','0%','9,300','9,300','1개','160g','goods8.jpg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods9','meat saleGoods bestGoods','[자연실록] 무항생제 두마리 통닭(550gX2입)','20%','6,435','10,900','1팩','550gX2입','muhang_two_chicken.jpg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods10','pasta salad saleGoods','[최현석의 쵸이닷] 새우 봉골레 파스타','15%','7,565','8,900','1팩','277g','hyunseok_shrimp_pasta.jpg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods11','seafood saleGoods','[만선] 완도 전복 5마리 260g 내외','26%','10,900','14,900','1팩','5마리 260g 내외','mansan_5_jeonbok_260g.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods12','health saleGoods bestGoods','[피지오겔] 베스트 특가 5종 택1(크림,로션,바디로션,썬크림,썬스틱)','52%','15,990','34,000','1개','200ml','pjogal_best_5.jpg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods13','seafood saleGoods bestGoods','[압구정주꾸미] 주꾸미 볶음 300g','23%','6,800','8,900','1팩','300g','apgujeong_webfoot_octopus_300g.jpg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods14','fruit newGoods','미국산 워싱턴 생체리 500g','46%','7,900','14,800','1팩','500g','america_cherry_500g.jpg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods15','noodle bestGoods','[정호영셰프의 우동카덴] 오리지널 우동','15%','4,930','5,800','1개','281g','jeong_original_Udon.jpg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods16','health saleGoods bestGoods','[투스노트] 미백치약/가글/화이트닝겔/치실 5종(택1)','77%','8,900','40,000','1개','100g','toothnonote_toothpaste_5.jpg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods17','vegetable','초당 옥수수(노랑이) 5입','20%','10,900','12,100','5입','500g','codang_corner.jpg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods18','vegetable','[KF365] 감자 1kg','0%','3,990','3,990','1봉','1kg','potato_1kg.jpg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods19','vegetable','[KF365] 다다기오이 3입','0%','4,990','4,990','3입','3개입','dadagi_cucumber.jpg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods20','vegetable','영암 친환경 꿀고구마 2kg','10%','13,680','15,200','1박스','2kg','yongam_sweetpotato.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods21','vegetable','깐대파 500g','0%','2,890','2,890','1봉','500g','clean_green_onion.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods22','vegetable','[KF365] 애호박 1개','0%','1,290','1,290','1개','1개입','squash_1.jpg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods23','fruit','[KF365] 당도선별 수박 6kg','0%','20,900','20,900','1통','6kg','watermelon_6kg.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods24','fruit','[KF365] 실속 바나나 1kg','17%','3,190','3,890','1봉','1kg','dole_banana_1kg.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods25','fruit','[제스프리] 뉴질랜드 골드키위 1.1kg','23%','12,900','16,900','1팩','1.1kg','gold_kiwi_1.1kg.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods26','fruit','땅끝 해남 쌀 10kg','0%','29,900','29,900','1팩','1.1kg','hanam_ssal_10kg.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods27','fruit','[KF365] 머스크멜론 1.6kg','18%','8,900','10,900','1개','1.6kg','mask_melon_1.6kg.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values('goods28','fruit','상주 곶감 또개 200g','34%','6,900','10,600','1팩','200g','sangju_gokgam_200g.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods29','seafood','[풀사이드228] 토마토 홍합 스튜','14%','14,400','16,900','1팩','1kg','tomato_stew.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods30','seafood','[일미어담] 모듬장 1kg','7%','29,667','31,900','1통','1kg','modeumjang_1kg.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods31','seafood','[일미어담] 간장게장 1kg','7%','26,877','28,900','1통','1kg','ganjanggajang_1kg.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods32','seafood','참치 모듬회 300g','0%','29,900','29,900','1통','1kg','tuna_modeum_hoe_300g.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods33','seafood','[피쉬쉘] 모듬 조개탕','14%','10,200','11,900','1팩','600g','jogaetang.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods34','seafood','[쏘굿] 짜지않은 새우튀김 200g','14%','9,300','10,900','1팩','200g','shrimp_fried.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods35','meat','[KF365] 양념 소불고기 1kg','5%','18,990','19,990','1개','1kg','sobulgogi_1kg.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods36','meat','[KF365] 한돈 삼겹살 구이용 600g','15%','14,740','17,350','1팩','600g','handon_samgyeobsal_600g.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods37','meat','[KF365] 1+등급 무항생제 대란 20구','10%','6,390','7,100','1팩','1040g','muhang_bigegg_20.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods38','meat','[자연실록] 닭가슴살 큐브 스테이크 3종','0%','8,900','8,900','1팩','500g','chicken_breast_cube_3.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods39','meat','[모노키친] 롱롱 돈까스','10%','6,660','7,400','1개','320g','longlong_donggas.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods40','meat','[일상미소] 안심 200g','10%','15,300','17,000','1팩','200g','ansim_200g.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods41','mainCook','[사미헌] 갈비탕','0%','12,000','12,000','1팩','1kg','galbitang.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods42','mainCook','[부침명장] 한입아삭 김치전','0%','7,800','7,800','1봉','510g','kimchijeon.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods43','mainCook','[Kurlys] 국산콩 두부 300g','0%','1,900','1,900','1팩','300g','koreabean_dubu_300g.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods44','mainCook','[도리깨침] 월남쌈 밀키트','0%','20,900','20,900','1개','700g','springrolls_mealkit.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods45','mainCook','[홍루이젠] 대만 샌드위치 3개입 3종','0%','7,900','7,900','3개','204g','taiwan_sandwich_3.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods46','mainCook','[마이비밀] 라이킷 식단관리 도시락 8종','15%','3,995','4,700','1개','195g','health_lunchbox.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods47','salad','[스윗밸런스] 오늘의 샐러드 10종(택1)','26%','3,975','5,400','1통','240g','today_salad_10.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values('goods48','salad','[샐러드판다] 병 샐러드 12종(택1)','0%','5,500','5,500','1팩','225g','bottle_salad_12.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods49','salad','[Kurlys] 간편하게 바삭,유린기','0%','8,800','8,800','1팩','140g','simple_yourin.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods50','salad','[에머이] 소고기 쌀국수 키트(2인분)','0%','11,900','11,900','1봉','396g','cow_ricenoodle_kit.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods51','salad','[비비고] 왕교자 만두 1.05kg','30%','7,336','10,480','1봉','1050g','bibigo_king_mandu.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods52','salad','[동원참치] 살코기 참치 85g X 6캔','0%','9,980','9,980','1팩','85g x 6캔','dongwon_tunacan_6.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods53','noodle','[데체코] 엑스트라버진 올리브 오일','0%','16,800','16,800','1병','500ml','olive_oil.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods54','noodle','[맑은물에] 참 좋은 국산 콩물 2종(택1)','0%','3,800','3,800','1병','500ml','korean_bean_water.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods55','noodle','[폰타나] 이탈리아 캄파니아 스파게티','0%','2,450','2,450','1봉','500g','pontana_Italy_spaghetti.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods56','noodle','[천일식품] 사누끼 우동면','0%','5,150','5,150','1팩','230g X 5개입','sanuggi_wodong.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods57','noodle','[데체코] 토마토 파스타소스 3종','20%','4,784','5,980','1개','400g','tomato_pasta_sauce.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods58','noodle','[룸모] 롱 파스타 면 6종','0%','3,800','3,800','1봉','500g','long_pasta_6.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods59','drink','뽀로로가 좋아하는 초코우유(140mlx24개)','0%','16,900','16,900','1박스','140mlx24개','chocolate_milk.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods60','drink','[농부산천] 동팡수예 우롱차(500mlx4개)','0%','7,900','7,900','1박스','500mlx4개','wurongcha.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods61','drink','[엘릭시아] 플레이버 레몬에이드2종(750ml)','0%','7,000','7,000','1병','750ml','lemonade_2.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods62','drink','[엠보그] 플레인 요거트1L','0%','6,900','6,900','1팩','1L','plain_yogurt.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods63','drink','[딥스] 미네랄워터 해양심층수 에코 골드(500ml x 20)','18%','9,800','12,000','1팩','500ml x 20개','water_echo_gold_500ml.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods64','drink','코카콜라 제로(300ml x 24)','0%','22,900','22,900','1팩','300ml x 24개','coke_zero_300ml.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods65','snack','[부보] 바르셀로나 마카다미아 초콜릿','20%','23,840','29,800','1통','190g','barcelona_chocolate.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods66','snack','[아이스브레이커스] 캔디 4종','0%','2,800','2,800','1통','36g','icebreak_candy_4.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods67','snack','[위니비니] 젤리빈 2종','0%','2,700','2,700','1봉','60g','jellybean_2.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods68','snack','[바오담] 떠먹는 약식','10%','4,900','5,500','1팩','200g','yaksik.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods69','snack','[Kiri] 끼리 크림치즈 마카롱 6입','16%','15,000','18,000','1박스','150g','creancheese_macaroon_6.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods70','snack','[강성은 명과] 수제과자 5종(택1)','0%','5,000','5,000','1봉지','80g','homemade_cookie_5.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods71','bakery','[QBB] 와사비 스모크 치즈','30%','3,590','5,200','1팩','50g','wasabi_smoke_cheese.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods72','bakery','[일드프랑스] 몽태버 슬라이스 치즈','0%','9,600','9,600','1팩','150g','mong_slice_cheese.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods73','bakery','[오뚜기] 식물성 마가린 200g','0%','2,300','2,300','1개','200g','vegetable_magarin.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods74','bakery','[플레잇] 어니언 크림치즈 베이글(2개입)','0%','7,900','7,900','1박스','170g x 2개입','onion_creancheese_bagle.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods75','bakery','[선물세트] KIRI 끼리카페 봉봉치즈스틱(플레인)','6%','20,400','21,900','1상자','200g','bongbong_cheesestick(plain).jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods76','bakery','[바비브레드] 반미용 쌀 바게트(3개입)','0%','6,900','6,900','1상자','200g','rice_baguette.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods77','health','[덴프스] 덴마크 유산균이야기(60일분)','66%','31,200','92,000','1통','170mg x 60캡','Denmark_yusangyun.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods78','health','[로트백쉔] 11비타민 플러스(7일분)','50%','9,900','13,900','1병','750ml','11_vitamin_plus.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods79','health','[로트백쉔] 11비타민 플러스(7일분)','32%','10,100','15,000','1박스','250ml x 6개입','protein_drink_3.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods80','health','[티젠] 콤부차 레몬(30개입)','42%','11,500','19,900','1박스','5g x 30개입','combucha_lemon.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods81','health','[올리] 아카시아꿀(1+등급)','0%','25,000','25,000','1개','500g','acasia_honey.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods82','health','[고려은단] 퓨어 알티지 오메가3(60일분)','40%','17,900','30,000','1박스','801mg*60캡','altigi_omega3_60.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods83','wine','[커피빈 픽업] 키노티','37%','108,000','172,000','1병','500ml','kinoti.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods84','wine','[커피빈 픽업] 시바스 리갈 12년','36%','52,000','82,500','1병','500ml','sibas_regal_12.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods85','wine','[커피빈 픽업] 래빗홀 케이브힐','36%','93,000','145,500','1병','500ml','rabithole_cavehil.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods86','wine','[커피빈 픽업] 비피터 진','37%','28,000','45,100','1병','500ml','bipiter_jin.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods87','wine','[커피빈 픽업] 키노비 세이','36%','104,000','164,800','1병','500ml','kinobi_sai.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods88','wine','[커피빈 픽업] 말리부 라임','35%','26,000','40,000','1병','500ml','malibu_laim.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods89','traditional','[전통주] 빙탄복','10%','4,300','4,780','1병','500ml','bingtanbok.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods90','traditional','[전통주] 사회정미소 탁주','0%','15,000','15,000','1병','500ml','takju.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods91','traditional','[전통주] 낄낄복분자','0%','8,500','8,500','1병','500ml','kilkilbukbunja.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods92','traditional','[전통주] 가평잣생막걸리 블랙','15%','3,600','4,250','1병','500ml','makguli_black.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods93','traditional','[전통주] 경기백주 (무아스파탐)','0%','12,000','12,000','1병','500ml','geonggi_baekju.jpeg');
+insert into item(itemNum,itemCode,itemName,itemSalePercent,itemSale,itemPrice,saleUnit,weight,imgSrc)
+values ('goods94','traditional','[전통주] 미심 (무아스파탐)','0%','20,000','20,000','1병','500ml','misim.jpeg');
+
+//회원 테이블 만들기
+create table member(
+    memberID varchar(50),
+    password varchar(50) not null,
+    name varchar(50),
+    email varchar(50),
+    address varchar(50),
+    gender varchar(10),
+    birth varchar(20),
+    primary key(memberId)
+);
+//장바구니 테이블 만들기
+create table basketEx(
+    memberID varchar(50),
+    itemNum varchar(100),
+    quantity integer
+);
+//좋아요 테이블 만들기
+create table likeboxEx(
+    memberID varchar(50),
+    itemNum varchar(50)
+);

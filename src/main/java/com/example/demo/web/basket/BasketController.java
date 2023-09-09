@@ -47,22 +47,6 @@ public class BasketController {
             Item item = itemRepository.findById(itemNum);
             items.add(item);
         }
-//        String sql = "select itemNum from likeBox where memberId = ?";
-//        try{
-//            con = getConnection();
-//            pstmt = con.prepareStatement(sql);
-//            pstmt.setString(1,member.getId());
-//            rs = pstmt.executeQuery();
-//            while(rs.next()){
-//                String itemNum = rs.getString("itemNum");
-//                Item item = itemRepository.findById(itemNum);
-//                items.add(item);
-//            }
-//        }catch (SQLException e){
-//            throw e;
-//        } finally{
-//            close(con,pstmt,rs);
-//        }
         model.addAttribute("CountItems",items.size());
         model.addAttribute("items",items);
         return "page/likepage";
@@ -75,18 +59,6 @@ public class BasketController {
         Member member = (Member) session.getAttribute(SessionConst.LOGIN_MEMBER);
 
         basketMapper.saveLike(member.getId(),itemNum);
-//        String sql = "insert into likeBox values(?,?)";
-//        try{
-//            con = getConnection();
-//            pstmt = con.prepareStatement(sql);
-//            pstmt.setString(1,member.getId());
-//            pstmt.setString(2,itemNum);
-//            pstmt.executeUpdate();
-//        }catch (SQLException e){
-//            throw e;
-//        } finally{
-//            close(con,pstmt,rs);
-//        }
         return "redirect:/page/goods/"+itemNum;
     }
 
@@ -99,18 +71,6 @@ public class BasketController {
         Item item = itemRepository.findById(itemNum);
         items.remove(item);
         basketMapper.deleteLike(member.getId(),itemNum);
-//        String sql = "delete from likeBox where memberId = ? and itemNum = ?";
-//        try{
-//            con = getConnection();
-//            pstmt = con.prepareStatement(sql);
-//            pstmt.setString(1,member.getId());
-//            pstmt.setString(2,itemNum);
-//            pstmt.executeUpdate();
-//        }catch (SQLException e){
-//            throw e;
-//        } finally{
-//            close(con,pstmt,rs);
-//        }
         return "redirect:/shopBasket/like";
     }
 
