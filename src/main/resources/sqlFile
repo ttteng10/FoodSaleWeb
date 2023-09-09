@@ -213,13 +213,13 @@ create table member(
     primary key(memberId)
 );
 //장바구니 테이블 만들기
-create table basketEx(
+create table basket(
     memberID varchar(50),
     itemNum varchar(100),
     quantity integer
 );
 //좋아요 테이블 만들기
-create table likeboxEx(
+create table likebox(
     memberID varchar(50),
     itemNum varchar(50)
 );
